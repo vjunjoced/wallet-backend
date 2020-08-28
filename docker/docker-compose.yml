@@ -1,0 +1,28 @@
+version: '3'
+services:
+  wallet_app_db:
+    image: bitnami/mongodb
+    environment:
+      MONGODB_USERNAME: mongo_user
+      MONGODB_PASSWORD: mongo_password
+      MONGODB_DATABASE: wallet_app
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb_data_container:/data/db
+
+  wallet_app_web:
+    image: jvasquezx1/wallet-app
+    environment:
+      PORT: 3000
+    ports:
+      - 3050:3000
+    depends_on:
+      - wallet_app_backend
+
+  wallet_app_backend:
+    image: jvasquezx1/wallet-backend
+    environment:
+      URL_MONGO: mongodb://mongo_user:mongo_password@wallet_app_db:27017/wallet_app
+    ports:
+      - 3000:3000

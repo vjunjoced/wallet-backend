@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "287fe52d-613a-463f-b61d-c466ac8c3366",
+		"name": "Wallet app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/products",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/products/5f47f1a1708f6932078bbba0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products",
+								"5f47f1a1708f6932078bbba0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by symbol",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/products/symbol/BTC",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products",
+								"symbol",
+								"BTC"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Bitcoin\",\n\t\"symbol\": \"BTC\",\n\t\"price\": 11139.90,\n\t\"image\":\"https://icons-for-free.com/iconfiles/png/512/btc+coin+crypto+icon-1320162856490699468.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/products",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"price\": 11150.91,\n\t\"image\":\"https://icons-for-free.com/iconfiles/png/512/btc+coin+crypto+icon-1320162856490699468.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/products/5f47fb0c3a156e73ca580b3d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products",
+								"5f47fb0c3a156e73ca580b3d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/products/5f47f1a1708f6932078bbba0",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"products",
+								"5f47f1a1708f6932078bbba0"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/wallets",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"wallets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/wallets/5f480c4f19f498b3ae861d0d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"wallets",
+								"5f480c4f19f498b3ae861d0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Wallet Btc\",\n\t\"product\": \"5f47fb0c3a156e73ca580b3d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/wallets",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"wallets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": 11150.91\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/wallets/5f480c4f19f498b3ae861d0d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"wallets",
+								"5f480c4f19f498b3ae861d0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/wallets/5f480c4f19f498b3ae861d0d",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"wallets",
+								"5f480c4f19f498b3ae861d0d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/transactions",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{server}}/transactions/5f481cd2137f15fb010b9eff",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"transactions",
+								"5f481cd2137f15fb010b9eff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"addressTo\": \"192839nc912893\",\n\t\"quantity\": 200,\n\t\"wallet\": \"5f4816c63e7d2fe81cc7efe0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/transactions",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Received",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"addressTo\": \"bdc6ce59-843b-4c94-aed1-7871a75ca422\",\n\t\"quantity\": 400,\n\t\"addressFrom\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{server}}/transactions/receive",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"transactions",
+								"receive"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
